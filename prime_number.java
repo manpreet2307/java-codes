@@ -1,28 +1,26 @@
 import java.util.Scanner;
+
 public class prime_number {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        boolean isPrime = true;
 
-        if (num <= 1) {
-            isPrime = false;
-        } else {
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0) {
-                    isPrime = false;
-                    break;
-                }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int count = 0;
++
+        for(int i = 1; i <= n; i++) {
+            if(n % i == 0) {
+                count++;
             }
         }
 
-        if (isPrime) {
-            System.out.println(num + " is a prime number.");
+        if(count == 2) {
+            System.out.println("Prime Number");
         } else {
-            System.out.println(num + " is not a prime number.");
+            System.out.println("Not a Prime Number");
         }
-
         sc.close();
     }
 }
